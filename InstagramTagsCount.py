@@ -13,11 +13,10 @@ def getInstagramTagsCount(tagNameArray):
         file = open("InstagramTagsCount.txt", "w")
 
         print("Tag  \t\t\t\t\t Count")
-        print("------------------------------")
 
         for tag_name in tagNameArray:
 
-            # create url for each hashtag
+            # create url for each hashtag using api endpoint specification
             url = "https://api.instagram.com/v1/tags/" + tag_name + "?client_id=6cd753ceba494a209edf8459f42f9a37"
 
             # read the response

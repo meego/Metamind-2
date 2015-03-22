@@ -13,12 +13,9 @@ def convertToTag(array):
     tagsArray = []
     for element in array:
         if ',' in element:
-
             # extract text before comma if comma present in the string
             cleanedElement = ''.join(re.findall("[a-zA-z]", element.split(",", 1)[0]))
-
         else:
-
             cleanedElement = ''.join(re.findall("[a-zA-z]", element))
 
         tagsArray.append(cleanedElement)  # append in the array
@@ -32,7 +29,6 @@ def getMergedArray():
     and tripadvisor
 
     """
-
     finalAllPlacesArray = []
 
     absoluteVisitPlacesArray = getAbsoluteVisitTop100()     # get top 100 places from absolute visit
