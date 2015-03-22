@@ -48,7 +48,7 @@ def readTop100List():
     list of top 100 places
     """
 
-    data = p.read_csv("/Users/arpeetkale1/Documents/Metamind/top100.csv")
+    data = p.read_csv("/path/to/top100.csv")
 
     top100 = data['PLACE']
 
