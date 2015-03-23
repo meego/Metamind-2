@@ -62,6 +62,6 @@ def getInstagramPhotoURL(tag_name):
 
 if __name__ == '__main__':
 
-    getInstagramPhotoURL("AntarticaCruise")
+    getInstagramPhotoURL("tag")
 
 

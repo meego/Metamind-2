@@ -18,7 +18,7 @@ def get_urls_for_tags(tag, number):
     try:
         urls = []
         i = 0
-        path_to_directory = "ImageFiles"
+        path_to_directory = "FlickrImageFiles"
 
         if not os.path.exists(path_to_directory):
             os.makedirs(path_to_directory)
@@ -54,10 +54,6 @@ def photos_required(screen, size=(100, 100)):
 
 if __name__ == '__main__':
 
-    #taggedArray = convertToTag(readTop100List())
-    #print(taggedArray)
+    get_urls_for_tags("tag", 500)
 
-    #for tag in taggedArray:
-    #    get_urls_for_tags(tag, 500)
-
-    getPhotosFromUrls("ImageFiles")
+    getPhotosFromUrls("path/to/directory")

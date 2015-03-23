@@ -1,5 +1,5 @@
 __author__ = 'arpeetkale1'
-
+import googleapiclient
 from googleapiclient.discovery import build
 import time
 
@@ -12,6 +12,7 @@ def getGoogleImagesURL(query):
         # customer search api endpoint
         service = build("customsearch", "v1", developerKey="AIzaSyCGFvvA8ewR4Q2AhH9BK3QavFvW8x1n5Yw")
         file = open(query + ".txt", "a")
+
         res = service.cse().list(
             q=query,
             cx='002561766668253956288:p4ojtzv0fco',  # search engine id
@@ -25,6 +26,9 @@ def getGoogleImagesURL(query):
         for i in range(50):
             start = res['queries']['nextPage'][0]['startIndex']     # pagination
             print(start)
+            if start >= 100:
+                print("Results limited to 100 per query by Google Custom Search API")
+                break
             res = service.cse().list(
                 q=query,
                 cx='002561766668253956288:p4ojtzv0fco',
@@ -42,12 +46,12 @@ def getGoogleImagesURL(query):
             time.sleep(5)
 
         file.close()
-    except Exception as e:
-        print(e)
     except KeyboardInterrupt as e:
+        print(e)
+    except googleapiclient.errors.HttpError as e:
         print(e)
 
 
 if __name__ == '__main__':
 
-    getGoogleImagesURL("Baia do Sancho")
+    getGoogleImagesURL("keyword")
