@@ -11,6 +11,8 @@ Requirements:
 5. pandas           -   pip3 install pandas
 
 
+Project Files:
+
 1. AbsoluteVisitScraper.py	    - Code to scrape www.absolutevisit.com and get their list of top 100 tourist sights
 
 2. FlickrPhotos.py	            - Code to retrieve urls for images and then download images using those urls
