@@ -3,6 +3,7 @@
 Project to get top tourist places around the world and get photos of these sights.
 
 Requirements:
+
 1. Python 3.x+
 2. BeautifulSoup    -   pip3 install beautifulsoup4
 3. Pillow           -   pip3 install Pillow
